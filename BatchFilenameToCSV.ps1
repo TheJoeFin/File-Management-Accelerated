@@ -1,0 +1,1 @@
+Get-ChildItem | Where-Object {$_.Name.Length -ge 8 } | Group-Object  { $_.Name.Substring(0, 8) } | Select-Object -Property Name, Count | export-csv files.csv -NoTypeInformation; Get-Content .\files.csv
